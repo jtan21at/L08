@@ -1,14 +1,20 @@
+import java.util.Arrays;
 public class L08 {
     public static void main(String[] args) {
         // TO DO:
         // Test your radix sort implementation here
+        String[] arr=generateStringArray(3,3);
+        displayStringArray(arr);
+        arr=radixSort(arr);
+        displayStringArray(arr);
+
+
     }
 
     // TO DO:
     // Implement
     // NOTE: You can assume that all strings in the array have the same length
     public static void radixSort(String[] array) {
-      import java.util.Arrays;
 
 
     //ascii码的取值范围
@@ -51,8 +57,8 @@ public class L08 {
     }
     //获取字符串第k位字符所对应的ascii码序号
     private static int getCharIndex(String str, int k){
-        //w位数不足的位置补0
-        if(str.length() < k+1){
+        //put
+            if(str.length() < k+1){
             return 0;
         }
         return str.charAt(k);
