@@ -6,13 +6,34 @@ public class L08 {
         // Test your radix sort implementation here
         String[] arr = generateStringArray(3, 8);
         displayStringArray(arr);
+/*dta
+kcn
+wqg
+hdk
+zxu
+yyx
+znv
+dhu
+*/
 
         System.out.println();
 //        System.out.println(Arrays.toString(radixSort(arr)));
 //        radixSort(arr);
      //   displayStringArray(arr);
-      displayStringArray(radixSort(arr));
+        String[] result_arr= radixSort(arr);
+      displayStringArray(result_arr);
+ /*
+zxu
+znv
+yyx
+wqg
+kcn
+hdk
+dta
+dhu*/
+        System.out.println("\nSorted In Nondescending Order:");
 
+    System.out.println(isSortedInNondescendingOrder(result_arr)?"Right, it is sorted in non-descending order":"No, it is sorted in decending order");
 
     }
 
@@ -28,19 +49,19 @@ public class L08 {
 
 
              int maxLen = 0;
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[i].length() > maxLen) {
-                    maxLen = arr[i].length();
-                }
+        for (String item : arr) {
+            if (item.length() > maxLen) {
+                maxLen = item.length();
             }
+        }
 
             String[] sortArr = new String[arr.length];
 
             //for low to high
             for (int k = maxLen - 1; k >= 0; k--) {
                 int[] cntArr = new int[range_asc];
-                for (int i = 0; i < arr.length; i++) {
-                    int index = getIndex(arr[i], k);
+                for (String value : arr) {
+                    int index = getIndex(value, k);
                     cntArr[index]++;
                 }
                 int sum = 0;
@@ -52,11 +73,11 @@ public class L08 {
 
                 }
 
-                for (int i = 0; i< arr.length ; i++) {
-                    int index = getIndex(arr[i], k);
+                for (String s : arr) {
+                    int index = getIndex(s, k);
 
 
-                    sortArr[arr.length-cntArr[index] ] = arr[i];
+                    sortArr[arr.length - cntArr[index]] = s;
                     cntArr[index]--;
                 }
 
