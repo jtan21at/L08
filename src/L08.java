@@ -4,7 +4,8 @@ public class L08 {
     public static void main(String[] args) {
         // TO DO:
         // Test your radix sort implementation here
-        String[] arr = generateStringArray(3, 8);
+        System.out.println("generating 3-letter long strings ");
+        String[] arr = generateStringArray(3, 26);
         displayStringArray(arr);
 /*dta
 kcn
@@ -16,7 +17,7 @@ znv
 dhu
 */
 
-        System.out.println();
+        System.out.println("sorting in descending order");
 //        System.out.println(Arrays.toString(radixSort(arr)));
 //        radixSort(arr);
      //   displayStringArray(arr);
@@ -31,9 +32,9 @@ kcn
 hdk
 dta
 dhu*/
-        System.out.println("\nSorted In Nondescending Order:");
+        System.out.println("\nIs Sorted In descending Order?");
 
-    System.out.println(isSortedInNondescendingOrder(result_arr)?"Right, it is sorted in non-descending order":"No, it is sorted in decending order");
+    System.out.println(isSortedInNondescendingOrder(result_arr)?"No, it is sorted in non-descending order":"Yes, it is sorted in decending order");
 
     }
 
